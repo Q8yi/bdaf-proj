@@ -59,7 +59,7 @@ https://cloud.google.com/blockchain-analytics/docs/supported-datasets
 the codes block is meant to run in google cloud, to retrieve each respective dataset mentioned in the comment line above each block
 
 2) Blockchain.ipynb
- - using api to extract blockchain data using Owlracle API
+ - using Owlracle AP to extract blockchain data
 
 3) merge_block.ipynb
 - merge all the blockchain data together accordingly
@@ -69,5 +69,6 @@ the codes block is meant to run in google cloud, to retrieve each respective dat
 
 3) analysis.ipynb
 - represent different correlation analysis for each respective network_data and network > prices dataset with each tweets posted by different users
+
 
 ```
