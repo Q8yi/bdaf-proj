@@ -110,6 +110,7 @@ app.layout = html.Div(
                 value="Show Tweets Date",
                 inline=True,
             ),
+
         ]),
     ], style={'textAlign': 'center', 'color': 'black', 'fontSize': 12, 'background': 'white', 'margin': 10}
 )
@@ -173,8 +174,7 @@ def update_cat(network) :
     Input(component_id='networkSelected', component_property='value'),
     Input(component_id='priceCatSelected', component_property='value'),
     Input(component_id='user-selected', component_property='value'),
-    Input(component_id='show-tweets', component_property='value')
-
+    Input(component_id='show-tweets', component_property='value'),
 )
 
 def update_table(networkSelected, priceCatSelected, user, show_tweets):
@@ -186,6 +186,10 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
         -> candle graph of filtered networks and price cateogry type
     '''
     if priceCatSelected not in avail_cat[networkSelected]:
+        #retrieve the type of data that is available for selected network
+        #since we do not have same type of data available across all network
+        #e.g. Avalanche network only has coin price and gas price data available
+        # as compared to Doge network which has coin price, txFee, txCount
         priceCatSelected = chain_prices_cat[avail_cat[networkSelected][0]]
     else :
         priceCatSelected = chain_prices_cat[priceCatSelected]
