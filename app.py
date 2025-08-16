@@ -102,17 +102,16 @@ app.layout = html.Div(
         ]),
         #show original blockchain data
         html.Div(className='row', id='blockchain-info', children=[
-            html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
             html.Div(className='four columns', children=[
                 dash_table.DataTable(data=chain_df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'})
             ]),
+            html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
             dcc.RadioItems(
                 options=["Show Tweets Date", "Hide Tweets Date"],
                 id='show-tweets',
                 value="Show Tweets Date",
                 inline=True,
             ),
-
         ]),
     ], style={'textAlign': 'center', 'color': 'black', 'fontSize': 12, 'background': 'white', 'margin': 10}
 )
@@ -159,6 +158,7 @@ def update_tweet_df(user):
             html.H3("Tweets table"),
             dash_table.DataTable(data=main_output, id='tweet-df-output', page_size=12, style_table={'overflowX': 'auto'}),
             html.H3(f"This table consist of {curr_df.shape[0]} rows and {curr_df.shape[1]} columns"),
+            html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
             dcc.Graph(figure=fig, id='tweet-df-analysis'),
         ]
     ),
@@ -245,10 +245,7 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
                 line=dict(color="red", width=1, dash="dash")
             )
         '''
-
-
-
-          #add_tweet_lines(fig, tweet_dates, df[f'Open'].astype(float).max())
+        #add_tweet_lines(fig, tweet_dates, df[f'Open'].astype(float).max())
         print("done")
         return html.Div(className='four columns center', children=[
             html.H3(f"{networkSelected} data table"),
@@ -260,6 +257,7 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
                 value=show_tweets,
                 inline=True,
             ),
+            html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
             dcc.Graph(figure=fig, id='block-df-analysis'),
         ]
     ),
@@ -317,6 +315,7 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
                     value=show_tweets,
                     inline=True,
                 ),
+                html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
                 html.Div(
                     children=[
                         dcc.Graph(figure=fig, id=f'block-df-analysis-{i}')
@@ -334,4 +333,5 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
 
 
 if __name__ == '__main__':
+    #app.run()
     app.run(debug=True, port=8050, host='0.0.0.0')
