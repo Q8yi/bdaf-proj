@@ -5,6 +5,7 @@ import dash_mantine_components as dmc
 import pandas as pd
 import numpy as np
 import glob
+import os
 
 #graph
 import plotly.express as px
@@ -332,4 +333,4 @@ def update_table(networkSelected, priceCatSelected, user, show_tweets):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8050, host='0.0.0.0')
