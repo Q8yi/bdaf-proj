@@ -102,6 +102,7 @@ app.layout = html.Div(
         ]),
         #show original blockchain data
         html.Div(className='row', id='blockchain-info', children=[
+            html.H3("The chart displays blockchain data in relation to tweets. The dotted red vertical lines indicate the time when a tweet was posted by the selected influencer above."),
             html.Div(className='four columns', children=[
                 dash_table.DataTable(data=chain_df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'})
             ]),
