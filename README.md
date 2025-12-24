@@ -37,7 +37,7 @@ The explanantion follows the following format:
 3) avg_value_in_wei: Value transferred in Wei on average each day
 
 Data files under folder dataset/tweets explanation:
-1) cleaned_tweets.csv
+1) data_cleaning_for_tweets.csv
 -> processed and merged all files in filtered tweets
 -> transforming object type columns to integer type (preparation for machine learning)
 
@@ -52,22 +52,22 @@ each file represent csv output of merging every data in network/network_data wit
 ```shell
 under scripts folder
 
-1) network_data_retrieval.sql
+1) data_retrieval.sql
 please copy paste each code block to the respective datasets in the following google bigquery link:
 https://cloud.google.com/blockchain-analytics/docs/supported-datasets
 
 the codes block is meant to run in google cloud, to retrieve each respective dataset mentioned in the comment line above each block
 
-2) Blockchain.ipynb
+2) get_blockchain_data.ipynb
  - using Owlracle AP to extract blockchain data
 
-3) merge_block.ipynb
+3) merge_blockchain_datasets.ipynb
 - merge all the blockchain data together accordingly
 
-4) merge.ipynb
+4) merge_tweets_datasets.ipynb.ipynb
 - merges tweets
 
-3) analysis.ipynb
+3) data_analysis.ipynb
 - represent different correlation analysis for each respective network_data and network > prices dataset with each tweets posted by different users
 
 
