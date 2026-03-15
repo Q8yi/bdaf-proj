@@ -15,7 +15,7 @@ python app.py
 
 
 ```shell
-Data files under folder dataset/network/network_data explanation:
+Data files under folder src/dataset/network/network_data explanation:
 The following represent what each files contained :
 
 The explanantion follows the following format:
@@ -42,13 +42,13 @@ The explanantion follows the following format:
 2) avg_gas_price_in_wei : Gas price provided by the sender in Wei on average each day
 3) avg_value_in_wei: Value transferred in Wei on average each day
 
-Data files under folder dataset/tweets explanation:
+Data files under folder src/dataset/tweets explanation:
 1) data_cleaning_for_tweets.csv
 -> processed and merged all files in filtered tweets
 -> transforming object type columns to integer type (preparation for machine learning)
 
 
-Data files under folder datasets/network/merged explanation:
+Data files under folder src/datasets/network/merged explanation:
 each file represent csv output of merging every data in network/network_data with tweets/cleaned_tweets.csv and network/prices with tweets/cleaned_tweets.csv
 -> the purpose is to ease the process of training and testing in machine learning models
 
@@ -56,7 +56,7 @@ each file represent csv output of merging every data in network/network_data wit
 ```
 
 ```shell
-under scripts folder
+under src/scripts folder
 
 1) data_retrieval.sql
 please copy paste each code block to the respective datasets in the following google bigquery link:
