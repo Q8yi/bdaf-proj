@@ -1,6 +1,12 @@
 # How impactful are tweets made by influential figures on blockchain prices
 
 ```shell
+# activate virtual environment
+python -m venv .venv
+.venv\Scripts\activate
+
+# install libraries
+cd src
 npm install
 pip3 install -r requirements.txt
 python app.py
